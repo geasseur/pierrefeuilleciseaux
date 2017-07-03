@@ -25,45 +25,44 @@ function pcf(){
     }
 
     else if(joueur=="ciseaux" && ordi=="pierre"){
-      console.log("ordi gagne, pointOrdi: "+pointOrdi);
+      console.log("ordi gagne, la manche");
       pointOrdi = pointOrdi + 1;
     }
 
     else if(joueur=="pierre" && ordi=="feuille"){
-      console.log("ordi gagne, pointOrdi: "+pointOrdi);
+      console.log("ordi gagne, la manche");
       pointOrdi = pointOrdi + 1;
     }
 
     else if(joueur=="feuille" && ordi=="ciseaux"){
-      console.log("ordi gagne, pointOrdi: "+pointOrdi);
+      console.log("ordi gagne, la manche");
       pointOrdi = pointOrdi + 1;
     }
 
     else if(joueur=="ciseaux" && ordi=="feuille"){
-      console.log("joueur gagne, point du joueur : "+pointJoueur);
+      console.log("joueur gagne, la manche");
       pointJoueur = pointJoueur + 1;
     }
 
     else if(joueur=="feuille" && ordi=="pierre"){
-      console.log("joueur gagne, point du joueur : "+pointJoueur);
+      console.log("joueur gagne, la manche");
       pointJoueur = pointJoueur + 1;
     }
 
     else if(joueur=="pierre" && ordi =="ciseaux"){
-      console.log("joueur gagne, point du joueur : "+pointJoueur);
+      console.log("joueur gagne, la manche");
       pointJoueur = pointJoueur + 1;
     }
 
     else{
       console.log("vous avez mal rentrez un signe");
     }
-  }
-
-  if(pointJoueur==3){
-    console.log("victoire : point du joueur: "+pointJoueur+ " point de l'ordi : "+pointOrdi);
-  }
-  else if(pointOrdi==3){
-    console.log("defaite: point du joueur: "+pointJoueur+ " point de l'ordi : "+pointOrdi);
+    if(pointJoueur==4){
+      console.log("victoire du joueur ! ");
+    }
+    else if(pointOrdi==4){
+      console.log("victoire de l'ordinateur ! ");
+    }
   }
 }
 pcf();

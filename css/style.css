@@ -1,0 +1,86 @@
+h1{
+  text-align: center;
+}
+
+h2{
+  margin : 0 50px;
+}
+
+.score{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.jeu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(95, 96, 97, 0.6);
+}
+
+.tableJeu{
+  background-color: rgba(255, 255, 255, 0.90);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.mainJoueur,.mainOrdi,.plateau{
+  margin: 0;
+  display: inline-block;
+}
+
+.mainJoueur,.mainOrdi{
+  width: 28%;
+}
+
+.plateau{
+  width: 42%;
+}
+
+.mainJoueur{
+  background-color: green;
+}
+.mainOrdi{
+  background-color: red;
+}
+
+.plateau{
+  background-image: url(http://www.yearn-magazine.fr/wp-content/uploads/2015/12/peindre-du-bois-blog-diy-do-it-yourself-yearn.jpg);
+}
+
+.imgCarte{
+  width:80%;
+}
+
+.cartePlateau,.carteJeu{
+  border: 2px solid #000;
+  border-radius: 10px;
+  width: 50%;
+  margin: 20px 25%;
+}
+
+.mainJoueur .carteJeu{
+  background-color: green;
+}
+
+.mainOrdi .carteJeu{
+  background-color: red;
+}
+
+.carteJeu>div{
+  background-color: white;
+  width: 70%;
+  height: 100px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartePlateau{
+  position: absolute;
+  display: none;
+}

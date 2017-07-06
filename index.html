@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Pierre Feuille Ciseaux</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,15 +12,103 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+      <section class="titre">
+        <h1>Pierre-Feuille-Ciseaux Championship</h1>
+        <article class="score">
+          <h2 id="pointJoueur">0</h2>
+          <h2 id ="pointOrdi">0</h2>
+        </article>
+      </section>
+      <section class="jeu">
+        <section class="tablejeu">
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+          <!--CHOIX DE CARTE DU JOUEUR-->
+          <section class="mainJoueur">
+            <article class="carteJeu">
+              <div>
+                <img class= "imgCarte" src="img/ciseaux.png" alt="ciseaux">
+              </div>
+            </article>
+            <article class="carteJeu">
+              <div>
+                <img class= "imgCarte" src="img/pierre.png" alt="pierre">
+              </div>
+            </article>
+            <article class="carteJeu">
+              <div>
+                <img class= "imgCarte" src="img/feuille.png" alt="feuille">
+              </div>
+            </article>
+          </section>
+
+          <!--PLATEAU DE JEU-->
+          <section class="plateau">
+            <!--CARTE DU JOUEUR-->
+            <article class="cartePlateau">
+              <div>
+                <img class= "imgCarte" src="img/ciseaux.png" alt="ciseaux">
+              </div>
+            </article>
+            <article class="cartePlateau">
+              <div>
+                <img class= "imgCarte" src="img/pierre.png" alt="pierre">
+              </div>
+            </article>
+            <article class="cartePlateau">
+              <div>
+                <img class= "imgCarte" src="img/feuille.png" alt="feuille">
+              </div>
+            </article>
+
+            <!--AFFICHAGE JEU-->
+            <section class="annonce">
+
+            </section>
+
+            <!--CHOIX DE CARTE DE L'ORDINATEUR-->
+            <article class="cartePlateau">
+              <div>
+                <img class= "imgCarte" src="img/ciseaux.png" alt="ciseaux">
+              </div>
+            </article>
+            <article class="cartePlateau">
+              <div>
+                <img class= "imgCarte" src="img/pierre.png" alt="pierre">
+              </div>
+            </article>
+            <article class="cartePlateau">
+              <div>
+                <img class= "imgCarte" src="img/feuille.png" alt="feuille">
+              </div>
+            </article>
+          </section>
+
+
+          <!--CHOIX DE CARTE DE L'ORDINATEUR-->
+          <section class="mainOrdi">
+            <article class="carteJeu">
+              <div>
+                <img class= "imgCarte" src="img/ciseaux.png" alt="ciseaux">
+              </div>
+            </article>
+            <article class="carteJeu">
+              <div>
+                <img class= "imgCarte" src="img/pierre.png" alt="pierre">
+              </div>
+            </article>
+            <article class="carteJeu">
+              <div>
+                <img class= "imgCarte" src="img/feuille.png" alt="feuille">
+              </div>
+            </article>
+          </section>
+
+        </section>
+      </section>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>

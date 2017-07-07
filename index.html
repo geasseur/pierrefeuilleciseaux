@@ -19,26 +19,32 @@
       <section class="titre">
         <h1>Pierre-Feuille-Ciseaux Championship</h1>
         <article class="score">
-          <h2 id="pointJoueur">0</h2>
-          <h2 id ="pointOrdi">0</h2>
+          <div>
+            <h4 id=pseudoJoueur></h4>
+            <p id="pointJoueur">0</p>
+          </div>
+          <div>
+            <h4>Ordinateur</h4>
+            <p id ="pointOrdi">0</p>
+          </div>
         </article>
       </section>
-      <section class="jeu">
+
         <section class="tablejeu">
 
           <!--CHOIX DE CARTE DU JOUEUR-->
           <section class="mainJoueur">
-            <article class="carteJeu">
+            <article class="carteJeu"  id="carteCiseauxJoueur">
               <div>
                 <img class= "imgCarte" src="img/ciseaux.png" alt="ciseaux">
               </div>
             </article>
-            <article class="carteJeu">
+            <article class="carteJeu" id="cartePierreJoueur">
               <div>
                 <img class= "imgCarte" src="img/pierre.png" alt="pierre">
               </div>
             </article>
-            <article class="carteJeu">
+            <article class="carteJeu" id="carteFeuilleJoueur">
               <div>
                 <img class= "imgCarte" src="img/feuille.png" alt="feuille">
               </div>
@@ -47,60 +53,66 @@
 
           <!--PLATEAU DE JEU-->
           <section class="plateau">
-            <!--CARTE DU JOUEUR-->
-            <article class="cartePlateau">
-              <div>
-                <img class= "imgCarte" src="img/ciseaux.png" alt="ciseaux">
-              </div>
-            </article>
-            <article class="cartePlateau">
-              <div>
-                <img class= "imgCarte" src="img/pierre.png" alt="pierre">
-              </div>
-            </article>
-            <article class="cartePlateau">
-              <div>
-                <img class= "imgCarte" src="img/feuille.png" alt="feuille">
-              </div>
-            </article>
+            <div class="rangement">
 
-            <!--AFFICHAGE JEU-->
-            <section class="annonce">
+              <!--CARTE DU JOUEUR-->
+              <section class="coteJoueur">
+                <article class="cartePlateau" id="ciseauxPlateauJoueur">
+                  <div>
+                    <img class= "imgCarte" src="img/ciseaux.png" alt="ciseaux">
+                  </div>
+                </article>
+                <article class="cartePlateau" id="pierrePlateauJoueur">
+                  <div>
+                    <img class= "imgCarte" src="img/pierre.png" alt="pierre">
+                  </div>
+                </article>
+                <article class="cartePlateau" id="feuillePlateauJoueur">
+                  <div>
+                    <img class= "imgCarte" src="img/feuille.png" alt="feuille">
+                  </div>
+                </article>
+              </section>
 
-            </section>
+              <!--AFFICHAGE JEU-->
+              <section class="annonce">
+              </section>
 
-            <!--CHOIX DE CARTE DE L'ORDINATEUR-->
-            <article class="cartePlateau">
-              <div>
-                <img class= "imgCarte" src="img/ciseaux.png" alt="ciseaux">
-              </div>
-            </article>
-            <article class="cartePlateau">
-              <div>
-                <img class= "imgCarte" src="img/pierre.png" alt="pierre">
-              </div>
-            </article>
-            <article class="cartePlateau">
-              <div>
-                <img class= "imgCarte" src="img/feuille.png" alt="feuille">
-              </div>
-            </article>
+              <!--Carte de l'ordi-->
+              <section class="coteOrdi">
+                <article class="cartePlateau" id="ciseauxPlateauOrdi">
+                  <div>
+                    <img class= "imgCarte" src="img/ciseaux.png" alt="ciseaux">
+                  </div>
+                </article>
+                <article class="cartePlateau" id="pierrePlateauOrdi">
+                  <div>
+                    <img class= "imgCarte" src="img/pierre.png" alt="pierre">
+                  </div>
+                </article>
+                <article class="cartePlateau" id="feuillePlateauOrdi">
+                  <div>
+                    <img class= "imgCarte" src="img/feuille.png" alt="feuille">
+                  </div>
+                </article>
+              </section>
+            </div>
           </section>
 
 
           <!--CHOIX DE CARTE DE L'ORDINATEUR-->
           <section class="mainOrdi">
-            <article class="carteJeu">
+            <article class="carteJeu" id="carteCiseauxOrdi">
               <div>
                 <img class= "imgCarte" src="img/ciseaux.png" alt="ciseaux">
               </div>
             </article>
-            <article class="carteJeu">
+            <article class="carteJeu" id="cartePierreOrdi">
               <div>
                 <img class= "imgCarte" src="img/pierre.png" alt="pierre">
               </div>
             </article>
-            <article class="carteJeu">
+            <article class="carteJeu" id="carteFeuilleOrdi">
               <div>
                 <img class= "imgCarte" src="img/feuille.png" alt="feuille">
               </div>
@@ -108,12 +120,15 @@
           </section>
 
         </section>
-      </section>
+        <button type="button" name="button" onclick="CreationPartie()">Commencer partie</button>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/pierrefeuilleciseaux.js" ></script>
+
+        </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

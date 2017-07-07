@@ -1,3 +1,6 @@
+*{
+  border: 1px solid #000;
+}
 h1{
   text-align: center;
 }
@@ -6,25 +9,28 @@ h2{
   margin : 0 50px;
 }
 
+.titre{
+  background-color:yellow;
+}
+
 .score{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-
-.jeu{
+.score>div{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(95, 96, 97, 0.6);
+  flex-direction: column;
 }
 
-.tableJeu{
-  background-color: rgba(255, 255, 255, 0.90);
+.tablejeu{
+  background-image: url(../img/GameTrap_background4.jpg);
+  background-size: cover;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: baseline;
 }
 
 .mainJoueur,.mainOrdi,.plateau{
@@ -37,18 +43,9 @@ h2{
 }
 
 .plateau{
-  width: 42%;
-}
+  width: 41%;
+  position: relative;
 
-.mainJoueur{
-  background-color: green;
-}
-.mainOrdi{
-  background-color: red;
-}
-
-.plateau{
-  background-image: url(http://www.yearn-magazine.fr/wp-content/uploads/2015/12/peindre-du-bois-blog-diy-do-it-yourself-yearn.jpg);
 }
 
 .imgCarte{
@@ -62,11 +59,7 @@ h2{
   margin: 20px 25%;
 }
 
-.mainJoueur .carteJeu{
-  background-color: green;
-}
-
-.mainOrdi .carteJeu{
+.carteJeu{
   background-color: red;
 }
 
@@ -81,6 +74,15 @@ h2{
 }
 
 .cartePlateau{
-  position: absolute;
   display: none;
+}
+
+.rangement{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.annonce{
+  position: absolute;
 }

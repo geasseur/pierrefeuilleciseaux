@@ -1,6 +1,6 @@
-*{
+/*{
   border: 1px solid #000;
-}
+}*/
 h1{
   text-align: center;
 }
@@ -78,6 +78,7 @@ h2{
 }
 
 .rangement{
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -85,4 +86,10 @@ h2{
 
 .annonce{
   position: absolute;
+  width: 50%;
+  left: 25%;
+}
+
+.annonce #joueurGagne, .annonce #ordiGagne, .annonce #victoire, .annonce #defaite, .annonce #egalite{
+  display: none;
 }

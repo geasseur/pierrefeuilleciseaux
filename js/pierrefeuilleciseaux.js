@@ -6,8 +6,8 @@ var pseudo;
 var numOrdi = 0;
 var joueur = "";
 var ordi = "";
-var pointJoueur = 1;
-var pointOrdi = 1;
+var pointJoueur = 0;
+var pointOrdi = 0;
 
 function CreationPartie(){
   nom = prompt("entrez votre nom");
@@ -22,81 +22,68 @@ function CreationPartie(){
   }
 }
 
+//fonction choix ordinateur
+
+function choixOrdi(){
+
+}
+
+//funciton choix ordi
+
+function choixOrdi(){
+  numOrdi = Math.trunc(Math.random()*100);
+  if(numOrdi <= 33){
+    ordi="ciseaux";
+    document.getElementById("ciseauxPlateauOrdi").style.display = "inline-block";
+  }
+
+  else if(numOrdi>33 && numOrdi<=66){
+    ordi = "pierre";
+    document.getElementById("pierrePlateauOrdi").style.display = "inline-block";
+  }
+
+  else{
+    ordi = "feuille";
+    document.getElementById("feuillePlateauOrdi").style.display = "inline-block";
+  }
+  return ordi;
+}
+
 //fonction de selection des cartes du joueur
 
 function choixCiseaux(){
     joueur = "ciseaux";
-    alert("test")
     document.getElementById("ciseauxPlateauJoueur").style.display = "inline-block";
-    numOrdi = Math.trunc(Math.random()*100);
-    if(numOrdi <= 33){
-      ordi="ciseaux";
-      document.getElementById("ciseauxPlateauOrdi").style.display = "inline-block";
-    }
-
-    else if(numOrdi>33 && numOrdi<=66){
-      ordi = "pierre";
-      document.getElementById("pierrePlateauOrdi").style.display = "inline-block";
-    }
-
-    else{
-      ordi = "feuille";
-      document.getElementById("feuillePlateauOrdi").style.display = "inline-block";
-    }
-    return {joueur, numOrdi};
+    choixOrdi();
+    alert("ordi : " + ordi + " joueur : "+joueur);
+    confrontation();
   }
 
 function choixPierre(){
     joueur = "pierre";
-    alert("test")
     document.getElementById("pierrePlateauJoueur").style.display = "inline-block";
-    numOrdi = Math.trunc(Math.random()*100);
-    if(numOrdi <= 33){
-      ordi="ciseaux";
-      document.getElementById("ciseauxPlateauOrdi").style.display = "inline-block";
-    }
-
-    else if(numOrdi>33 && numOrdi<=66){
-      ordi = "pierre";
-      document.getElementById("pierrePlateauOrdi").style.display = "inline-block";
-    }
-
-    else{
-      ordi = "feuille";
-      document.getElementById("feuillePlateauOrdi").style.display = "inline-block";
-    }
-    return {joueur, numOrdi};
+    choixOrdi();
+    alert("ordi : " + ordi + " joueur : "+joueur);
+    confrontation();
   }
 
 function choixFeuille(){
     joueur = "feuille";
-    alert("test")
     document.getElementById("feuillePlateauJoueur").style.display = "inline-block";
-    numOrdi = Math.trunc(Math.random()*100);
-    if(numOrdi <= 33){
-      ordi="ciseaux";
-      document.getElementById("ciseauxPlateauOrdi").style.display = "inline-block";
-    }
-
-    else if(numOrdi>33 && numOrdi<=66){
-      ordi = "pierre";
-      document.getElementById("pierrePlateauOrdi").style.display = "inline-block";
-    }
-
-    else{
-      ordi = "feuille";
-      document.getElementById("feuillePlateauOrdi").style.display = "inline-block";
-    }
-    return {joueur, numOrdi};
+    choixOrdi();
+    alert("ordi : " + ordi + " joueur : "+joueur);
+    confrontation();
 }
 
 function nouveauTour(){
-  if(pointJoueur == 3 || pointJoueur == 3){
+  if(pointOrdi == 3 || pointJoueur == 3){
     if(pointJoueur == 3){
-      console.log("victoire du joueur ! ");
+      alert("victoire du joueur ! ");
+      return "";
     }
     else if(pointOrdi == 3){
-      console.log("victoire de l'ordinateur ! ");
+      alert("victoire de l'ordinateur ! ");
+      return "";
     }
   }
   else {
@@ -110,63 +97,65 @@ function nouveauTour(){
   }
 }
 
+function confrontation(){
+  if(joueur=="ciseaux" && ordi=="pierre"){
+    alert("ordi gagne, la manche");
+    pointOrdi = pointOrdi + 1;
+    document.getElementById("ordiGagne").style.display = "inline-block"
+    setTimeout(nouveauTour(), 3000);
+  }
+
+  else if(joueur=="pierre" && ordi=="feuille"){
+    alert("ordi gagne, la manche");
+    pointOrdi = pointOrdi + 1;
+    document.getElementById("ordiGagne").style.display = "inline-block"
+    setTimeout(nouveauTour(), 3000);
+  }
+
+  else if(joueur=="feuille" && ordi=="ciseaux"){
+    alert("ordi gagne, la manche");
+    pointOrdi = pointOrdi + 1;
+    document.getElementById("ordiGagne").style.display = "inline-block"
+    setTimeout(nouveauTour(), 3000);
+  }
+
+  else if(joueur=="ciseaux" && ordi=="feuille"){
+    alert("joueur gagne, la manche");
+    pointJoueur = pointJoueur + 1;
+    document.getElementById("joueurGagne").style.display = "inline-block"
+    setTimeout(nouveauTour(), 3000);
+  }
+
+  else if(joueur=="feuille" && ordi=="pierre"){
+    alert("joueur gagne, la manche");
+    pointJoueur = pointJoueur + 1;
+    document.getElementById("joueurGagne").style.display = "inline-block"
+    setTimeout(nouveauTour(), 3000);
+  }
+
+  else if(joueur=="pierre" && ordi =="ciseaux"){
+    alert("joueur gagne, la manche");
+    pointJoueur = pointJoueur + 1;
+    document.getElementById("joueurGagne").style.display = "inline-block"
+    setTimeout(nouveauTour(), 3000);
+  }
+  else{
+    alert("egalite");
+    setTimeout(nouveauTour(), 3000);
+  }
+}
+
 function pcf(){
 
     document.getElementById("pointJoueur").innerHTML = pointJoueur;
     document.getElementById("pointOrdi").innerHTML = pointOrdi;
 
     if(joueur == ""){
+      //choix donné au joueur
       document.getElementById("carteCiseauxJoueur").addEventListener("mousedown", choixCiseaux);
       document.getElementById("carteFeuilleJoueur").addEventListener("mousedown", choixFeuille);
       document.getElementById("cartePierreJoueur").addEventListener("mousedown", choixPierre);
     }
-
-  //CONFRONTATION
-      if(joueur===ordi){
-        setTimeout(nouveauTour(), 3000);
-      }
-
-      else if(joueur=="ciseaux" && ordi=="pierre"){
-        console.log("ordi gagne, la manche");
-        pointOrdi = pointOrdi + 1;
-        document.getElementById("ordiGagne").style.display = "inline-block"
-        setTimeout(nouveauTour(), 3000);
-      }
-
-      else if(joueur=="pierre" && ordi=="feuille"){
-        console.log("ordi gagne, la manche");
-        pointOrdi = pointOrdi + 1;
-        document.getElementById("ordiGagne").style.display = "inline-block"
-        setTimeout(nouveauTour(), 3000);
-      }
-
-      else if(joueur=="feuille" && ordi=="ciseaux"){
-        console.log("ordi gagne, la manche");
-        pointOrdi = pointOrdi + 1;
-        document.getElementById("ordiGagne").style.display = "inline-block"
-        setTimeout(nouveauTour(), 3000);
-      }
-
-      else if(joueur=="ciseaux" && ordi=="feuille"){
-        console.log("joueur gagne, la manche");
-        pointJoueur = pointJoueur + 1;
-        document.getElementById("joueurGagne").style.display = "inline-block"
-        setTimeout(nouveauTour(), 3000);
-      }
-
-      else if(joueur=="feuille" && ordi=="pierre"){
-        console.log("joueur gagne, la manche");
-        pointJoueur = pointJoueur + 1;
-        document.getElementById("joueurGagne").style.display = "inline-block"
-        setTimeout(nouveauTour(), 3000);
-      }
-
-      else if(joueur=="pierre" && ordi =="ciseaux"){
-        console.log("joueur gagne, la manche");
-        pointJoueur = pointJoueur + 1;
-        document.getElementById("joueurGagne").style.display = "inline-block"
-        setTimeout(nouveauTour(), 3000);
-      }
   }
 
 

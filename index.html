@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>Pierre Feuille Ciseaux</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,20 +12,144 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+      <section class="titre">
+        <h1>Pierre-Feuille-Ciseaux Championship</h1>
+        <article class="score">
+          <div>
+            <h4 id=pseudoJoueur></h4>
+            <p id="pointJoueur">0</p>
+          </div>
+          <div>
+            <h4>Ordinateur</h4>
+            <p id ="pointOrdi">0</p>
+          </div>
+        </article>
+      </section>
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <section class="tablejeu">
+
+          <!--CHOIX DE CARTE DU JOUEUR-->
+          <section id="mainJoueur">
+            <article class="carteJeu"  id="carteCiseauxJoueur">
+              <div>
+                <img class= "imgCarte" src="img/ciseauxResized.png" alt="ciseaux">
+              </div>
+            </article>
+            <article class="carteJeu" id="cartePierreJoueur">
+              <div>
+                <img class= "imgCarte" src="img/pierreResized.png" alt="pierre">
+              </div>
+            </article>
+            <article class="carteJeu" id="carteFeuilleJoueur">
+              <div>
+                <img class= "imgCarte" src="img/feuilleResized.png" alt="feuille">
+              </div>
+            </article>
+          </section>
+
+          <!--PLATEAU DE JEU-->
+          <section class="plateau">
+            <div class="rangement">
+
+              <!--CARTE DU JOUEUR-->
+              <section class="coteJoueur">
+                <article class="cartePlateau" class = "carteJeuJoueur"  id="ciseauxPlateauJoueur">
+                  <div>
+                    <img class= "imgCarte" src="img/ciseauxResized.png" alt="ciseaux">
+                  </div>
+                </article>
+                <article class="cartePlateau" class = "carteJeuJoueur"  id="pierrePlateauJoueur">
+                  <div>
+                    <img class= "imgCarte" src="img/pierreResized.png" alt="pierre">
+                  </div>
+                </article>
+                <article class="cartePlateau" class = "carteJeuJoueur"  id="feuillePlateauJoueur">
+                  <div>
+                    <img class= "imgCarte" src="img/feuilleResized.png" alt="feuille">
+                  </div>
+                </article>
+              </section>
+
+              <!--AFFICHAGE JEU-->
+              <section class="annonce">
+
+                <article id = "egalite">
+                  <h4>Egalite</h4>
+                </article>
+
+                <article id = "joueurGagne">
+                  <h4>Joueur remporte le round</h4>
+                </article>
+
+                <article id = "ordiGagne">
+                  <h4>Ordi remporte le round</h4>
+                </article>
+
+                <article id = "victoire">
+                  <h4>Victoire du joueur</h4>
+                </article>
+
+                <article id= "defaite">
+                  <h4>Victoire de l'ordinateur</h4>
+                </article>
+              </section>
+
+              <!--Carte de l'ordi-->
+              <section class="coteOrdi">
+                <article class="cartePlateau" class = "carteJeuOrdi" id="ciseauxPlateauOrdi">
+                  <div>
+                    <img class= "imgCarte" src="img/ciseauxResized.png" alt="ciseaux">
+                  </div>
+                </article>
+                <article class="cartePlateau" class = "carteJeuOrdi" id="pierrePlateauOrdi">
+                  <div>
+                    <img class= "imgCarte" src="img/pierreResized.png" alt="pierre">
+                  </div>
+                </article>
+                <article class="cartePlateau" class = "carteJeuOrdi" id="feuillePlateauOrdi">
+                  <div>
+                    <img class= "imgCarte" src="img/feuilleResized.png" alt="feuille">
+                  </div>
+                </article>
+              </section>
+            </div>
+          </section>
+
+
+          <!--CHOIX DE CARTE DE L'ORDINATEUR-->
+          <section id="mainOrdi">
+            <article class="carteJeu" id="carteCiseauxOrdi">
+              <div>
+                <img class= "imgCarte" src="img/ciseauxResized.png" alt="ciseaux">
+              </div>
+            </article>
+            <article class="carteJeu" id="cartePierreOrdi">
+              <div>
+                <img class= "imgCarte" src="img/pierreResized.png" alt="pierre">
+              </div>
+            </article>
+            <article class="carteJeu" id="carteFeuilleOrdi">
+              <div>
+                <img class= "imgCarte" src="img/feuilleResized.png" alt="feuille">
+              </div>
+            </article>
+          </section>
+
+        </section>
+        <button id="boutonCommencer" type="button" name="button" onclick="CreationPartie()">Commencer partie</button>
+        <button id ="boutonNouveauJeu" type="button" name="button" onclick="nouveauJeu()">Recommencer partie</button>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/pierrefeuilleciseaux.js" ></script>
+
+        </script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

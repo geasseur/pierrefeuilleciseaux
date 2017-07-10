@@ -1,0 +1,173 @@
+h1{
+  text-align: center;
+}
+
+h2{
+  margin : 0 50px;
+}
+
+body{
+  background-image: url(../img/GameTrap_background4.jpg);
+  background-size: cover;
+}
+
+.titre{
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+h4{
+  margin: 0 10px;
+}
+
+.score{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.score>div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tablejeu{
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+#mainJoueur,#mainOrdi,.plateau{
+  margin: 0;
+  display: inline-block;
+}
+
+#mainJoueur,#mainOrdi{
+  width: 28%;
+  border: 3px solid #000;
+}
+
+.plateau{
+  width: 41%;
+  position: relative;
+  top : 100px;
+}
+
+.imgCarte{
+  width:80%;
+}
+
+.cartePlateau,.carteJeu{
+  border: 2px solid #000;
+  border-radius: 10px;
+  width: 50%;
+  margin: 20px 25%;
+}
+
+.carteJeu{
+  background-color: red;
+}
+
+.carteJeu>div, .cartePlateau>div{
+  background-color: white;
+  width: 70%;
+  height: 100px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartePlateau{
+  display: none;
+  background-color: red;
+}
+
+.rangement{
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.annonce{
+  position: absolute;
+  width: 50%;
+  left: 25%;
+  bottom : 150px;
+}
+
+.annonce #joueurGagne, .annonce #ordiGagne, .annonce #victoire, .annonce #defaite, .annonce #egalite, #egalite{
+  display: none;
+  text-align: center;
+}
+
+#joueurGagne, #ordiGagne, #egalite{
+  background-color: rgb(200, 200, 200);
+  border: 2px solid rgb(116, 116, 116);
+}
+
+#victoire, #defaite{
+  background-color: rgb(240, 238, 92);
+  border: 2px solid rgb(203, 0, 0);
+  font-style: italic;
+  font-weight: bolder;
+}
+
+#boutonNouveauJeu{
+  display: none;
+}
+
+/*Animation combat Carte*/
+.coteJoueur>.cartePlateau {
+  animation-duration: 3s;
+  animation-name: animationJoueur;
+}
+
+.coteOrdi>.cartePlateau{
+  animation-duration: 3s;
+  animation-name: animationOrdi;
+}
+
+@keyframes animationJoueur {
+  0% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-left: 20%;
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+  100%{
+    margin-left: 0%;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes animationOrdi {
+  0% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-left: -20%;
+    -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+  100%{
+    margin-left: 0%;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@media (min-width: 800px) {
+  .imgCarte{
+    width: 50%;
+  }
+
+  .annonce{
+    left:32%;
+  }
+}

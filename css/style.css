@@ -1,6 +1,3 @@
-/*{
-  border: 1px solid #000;
-}*/
 h1{
   text-align: center;
 }
@@ -9,8 +6,17 @@ h2{
   margin : 0 50px;
 }
 
+body{
+  background-image: url(../img/GameTrap_background4.jpg);
+  background-size: cover;
+}
+
 .titre{
-  background-color:yellow;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+h4{
+  margin: 0 10px;
 }
 
 .score{
@@ -26,26 +32,25 @@ h2{
 }
 
 .tablejeu{
-  background-image: url(../img/GameTrap_background4.jpg);
-  background-size: cover;
   display: flex;
   justify-content: space-around;
   align-items: baseline;
 }
 
-.mainJoueur,.mainOrdi,.plateau{
+#mainJoueur,#mainOrdi,.plateau{
   margin: 0;
   display: inline-block;
 }
 
-.mainJoueur,.mainOrdi{
+#mainJoueur,#mainOrdi{
   width: 28%;
+  border: 3px solid #000;
 }
 
 .plateau{
   width: 41%;
   position: relative;
-
+  top : 100px;
 }
 
 .imgCarte{
@@ -63,7 +68,7 @@ h2{
   background-color: red;
 }
 
-.carteJeu>div{
+.carteJeu>div, .cartePlateau>div{
   background-color: white;
   width: 70%;
   height: 100px;
@@ -75,6 +80,7 @@ h2{
 
 .cartePlateau{
   display: none;
+  background-color: red;
 }
 
 .rangement{
@@ -88,8 +94,32 @@ h2{
   position: absolute;
   width: 50%;
   left: 25%;
+  bottom : 150px;
 }
 
-.annonce #joueurGagne, .annonce #ordiGagne, .annonce #victoire, .annonce #defaite, .annonce #egalite{
+.annonce #joueurGagne, .annonce #ordiGagne, .annonce #victoire, .annonce #defaite, .annonce #egalite, #egalite{
   display: none;
+  text-align: center;
+}
+
+#joueurGagne, #ordiGagne, #egalite{
+  background-color: rgb(200, 200, 200);
+  border: 2px solid rgb(116, 116, 116);
+}
+
+#victoire, #defaite{
+  background-color: rgb(240, 238, 92);
+  border: 2px solid rgb(203, 0, 0);
+  font-style: italic;
+  font-weight: bolder;
+}
+
+@media (min-width: 800px) {
+  .imgCarte{
+    width: 50%;
+  }
+
+  .annonce{
+    left:32%;
+  }
 }

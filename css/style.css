@@ -135,12 +135,14 @@ h4{
   }
 
   50% {
-    margin-left: 40%;
+    margin-left: 20%;
     -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
   }
   100%{
     margin-left: 0%;
     -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
 @keyframes animationOrdi {
@@ -149,12 +151,14 @@ h4{
   }
 
   50% {
-    margin-right: 40%;
+    margin-left: -20%;
     -webkit-transform: rotate(-15deg);
+    transform: rotate(-15deg);
   }
   100%{
     margin-left: 0%;
     -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
 }
 

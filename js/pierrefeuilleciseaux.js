@@ -57,7 +57,7 @@ function choixCiseaux(){
     joueur = "ciseaux";
     document.getElementById("ciseauxPlateauJoueur").style.display = "inline-block";
     choixOrdi();
-    
+
     confrontation();
   }
 
@@ -198,6 +198,7 @@ function pcf(){
 
 function finJeu(){
   if(pointJoueur == 3){
+    document.getElementById("pointJoueur").innerHTML = pointJoueur;
     document.getElementById("victoire").style.display = "inline-block";
     document.getElementById("mainOrdi").style.display = "none";
     document.getElementById("mainJoueur").style.display = "none";
@@ -205,6 +206,7 @@ function finJeu(){
     document.getElementById("boutonCommencer").style.display = "none";
   }
   else if(pointOrdi == 3){
+    document.getElementById("pointOrdi").innerHTML = pointOrdi;
     document.getElementById("defaite").style.display = "inline-block";
     document.getElementById("mainOrdi").style.display = "none";
     document.getElementById("mainJoueur").style.display = "none";

@@ -114,6 +114,50 @@ h4{
   font-weight: bolder;
 }
 
+#boutonNouveauJeu{
+  display: none;
+}
+
+/*Animation combat Carte*/
+.coteJoueur>.cartePlateau {
+  animation-duration: 3s;
+  animation-name: animationJoueur;
+}
+
+.coteOrdi>.cartePlateau{
+  animation-duration: 3s;
+  animation-name: animationOrdi;
+}
+
+@keyframes animationJoueur {
+  0% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-left: 40%;
+    -webkit-transform: rotate(15deg);
+  }
+  100%{
+    margin-left: 0%;
+    -webkit-transform: rotate(0deg);
+  }
+}
+@keyframes animationOrdi {
+  0% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-right: 40%;
+    -webkit-transform: rotate(-15deg);
+  }
+  100%{
+    margin-left: 0%;
+    -webkit-transform: rotate(0deg);
+  }
+}
+
 @media (min-width: 800px) {
   .imgCarte{
     width: 50%;

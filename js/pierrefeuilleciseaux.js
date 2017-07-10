@@ -57,6 +57,7 @@ function choixCiseaux(){
     joueur = "ciseaux";
     document.getElementById("ciseauxPlateauJoueur").style.display = "inline-block";
     choixOrdi();
+    
     confrontation();
   }
 
@@ -64,6 +65,7 @@ function choixPierre(){
     joueur = "pierre";
     document.getElementById("pierrePlateauJoueur").style.display = "inline-block";
     choixOrdi();
+
     confrontation();
   }
 
@@ -71,6 +73,7 @@ function choixFeuille(){
     joueur = "feuille";
     document.getElementById("feuillePlateauJoueur").style.display = "inline-block";
     choixOrdi();
+
     confrontation();
 }
 
@@ -98,6 +101,38 @@ function nouveauTour(){
     pcf();
   }
 }
+/*
+function moveJoueur() {
+  var elem = document.getElementsByClassName("carteJeuJoueur");
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    for(i = 0; i < elem.length; i++){
+      if (pos == 50) {
+        clearInterval(id);
+      } else {
+        pos++;
+        elem.style.right = pos + 'px';
+      }
+    }
+  }
+}
+
+function moveOrdi() {
+  var elem = document.getElementsByClassName("carteJeuOrdi");
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    for(i = 0; i < elem.length; i++){
+      if (pos == 50) {
+        clearInterval(id);
+      } else {
+        pos++;
+        elem.style.right = pos + 'px';
+      }
+    }
+  }
+}*/
 
 function confrontation(){
   if(joueur=="ciseaux" && ordi=="pierre"){
@@ -166,10 +201,31 @@ function finJeu(){
     document.getElementById("victoire").style.display = "inline-block";
     document.getElementById("mainOrdi").style.display = "none";
     document.getElementById("mainJoueur").style.display = "none";
+    document.getElementById("boutonNouveauJeu").style.display = "block";
+    document.getElementById("boutonCommencer").style.display = "none";
   }
   else if(pointOrdi == 3){
     document.getElementById("defaite").style.display = "inline-block";
     document.getElementById("mainOrdi").style.display = "none";
     document.getElementById("mainJoueur").style.display = "none";
+    document.getElementById("boutonCommencer").style.display = "none";
+    document.getElementById("boutonNouveauJeu").style.display = "block";
   }
+}
+
+function nouveauJeu(){
+  pointJoueur = 0;
+  pointOrdi = 0;
+  joueur ="";
+  ordi = "";
+  var listCarte = document.getElementsByClassName("cartePlateau");
+  //effacement des cartes du tableau
+  for(i = 0; i < listCarte.length; i++){
+    listCarte[i].style.display = "none"
+  }
+  document.getElementById("victoire").style.display = "none";
+  document.getElementById("defaite").style.display = "none";
+  document.getElementById("mainOrdi").style.display = "inline-block";
+  document.getElementById("mainJoueur").style.display = "inline-block";
+  pcf();
 }

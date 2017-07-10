@@ -57,17 +57,17 @@
 
               <!--CARTE DU JOUEUR-->
               <section class="coteJoueur">
-                <article class="cartePlateau" id="ciseauxPlateauJoueur">
+                <article class="cartePlateau" class = "carteJeuJoueur"  id="ciseauxPlateauJoueur">
                   <div>
                     <img class= "imgCarte" src="img/ciseauxResized.png" alt="ciseaux">
                   </div>
                 </article>
-                <article class="cartePlateau" id="pierrePlateauJoueur">
+                <article class="cartePlateau" class = "carteJeuJoueur"  id="pierrePlateauJoueur">
                   <div>
                     <img class= "imgCarte" src="img/pierreResized.png" alt="pierre">
                   </div>
                 </article>
-                <article class="cartePlateau" id="feuillePlateauJoueur">
+                <article class="cartePlateau" class = "carteJeuJoueur"  id="feuillePlateauJoueur">
                   <div>
                     <img class= "imgCarte" src="img/feuilleResized.png" alt="feuille">
                   </div>
@@ -100,17 +100,17 @@
 
               <!--Carte de l'ordi-->
               <section class="coteOrdi">
-                <article class="cartePlateau" id="ciseauxPlateauOrdi">
+                <article class="cartePlateau" class = "carteJeuOrdi" id="ciseauxPlateauOrdi">
                   <div>
                     <img class= "imgCarte" src="img/ciseauxResized.png" alt="ciseaux">
                   </div>
                 </article>
-                <article class="cartePlateau" id="pierrePlateauOrdi">
+                <article class="cartePlateau" class = "carteJeuOrdi" id="pierrePlateauOrdi">
                   <div>
                     <img class= "imgCarte" src="img/pierreResized.png" alt="pierre">
                   </div>
                 </article>
-                <article class="cartePlateau" id="feuillePlateauOrdi">
+                <article class="cartePlateau" class = "carteJeuOrdi" id="feuillePlateauOrdi">
                   <div>
                     <img class= "imgCarte" src="img/feuilleResized.png" alt="feuille">
                   </div>
@@ -141,7 +141,7 @@
 
         </section>
         <button id="boutonCommencer" type="button" name="button" onclick="CreationPartie()">Commencer partie</button>
-        <button type="button" name="button" onclick="">Recommencer partie</button>
+        <button id ="boutonNouveauJeu" type="button" name="button" onclick="nouveauJeu()">Recommencer partie</button>
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>

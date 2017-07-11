@@ -8,6 +8,9 @@ var joueur = "";
 var ordi = "";
 var pointJoueur = 0;
 var pointOrdi = 0;
+var signe;
+var nbCarte;
+var carte = document.getElementsByClassName("carteJeuJoueur");
 
 function CreationPartie(){
   nom = prompt("entrez votre nom");
@@ -23,12 +26,6 @@ function CreationPartie(){
 }
 
 //fonction choix ordinateur
-
-function choixOrdi(){
-
-}
-
-//funciton choix ordi
 
 function choixOrdi(){
   numOrdi = Math.trunc(Math.random()*100);
@@ -52,29 +49,6 @@ function choixOrdi(){
 //fonction de selection des cartes du joueur
 function test () {
   alert("Nouveau Tour");
-}
-function choixCiseaux(){
-    joueur = "ciseaux";
-    document.getElementById("ciseauxPlateauJoueur").style.display = "inline-block";
-    choixOrdi();
-
-    confrontation();
-  }
-
-function choixPierre(){
-    joueur = "pierre";
-    document.getElementById("pierrePlateauJoueur").style.display = "inline-block";
-    choixOrdi();
-
-    confrontation();
-  }
-
-function choixFeuille(){
-    joueur = "feuille";
-    document.getElementById("feuillePlateauJoueur").style.display = "inline-block";
-    choixOrdi();
-
-    confrontation();
 }
 
 
@@ -101,38 +75,6 @@ function nouveauTour(){
     pcf();
   }
 }
-/*
-function moveJoueur() {
-  var elem = document.getElementsByClassName("carteJeuJoueur");
-  var pos = 0;
-  var id = setInterval(frame, 5);
-  function frame() {
-    for(i = 0; i < elem.length; i++){
-      if (pos == 50) {
-        clearInterval(id);
-      } else {
-        pos++;
-        elem.style.right = pos + 'px';
-      }
-    }
-  }
-}
-
-function moveOrdi() {
-  var elem = document.getElementsByClassName("carteJeuOrdi");
-  var pos = 0;
-  var id = setInterval(frame, 5);
-  function frame() {
-    for(i = 0; i < elem.length; i++){
-      if (pos == 50) {
-        clearInterval(id);
-      } else {
-        pos++;
-        elem.style.right = pos + 'px';
-      }
-    }
-  }
-}*/
 
 function confrontation(){
   if(joueur=="ciseaux" && ordi=="pierre"){
@@ -190,11 +132,19 @@ function pcf(){
 
     if(joueur == ""){
       //choix donné au joueur
-      document.getElementById("carteCiseauxJoueur").addEventListener("mousedown", choixCiseaux);
-      document.getElementById("carteFeuilleJoueur").addEventListener("mousedown", choixFeuille);
-      document.getElementById("cartePierreJoueur").addEventListener("mousedown", choixPierre);
+      document.getElementById("carteCiseauxJoueur").addEventListener("mousedown", function() {choix('ciseaux', 0)});
+      document.getElementById("carteFeuilleJoueur").addEventListener("mousedown", function() {choix('pierre', 1)});
+      document.getElementById("cartePierreJoueur").addEventListener("mousedown", function() {choix('feuille', 2)});
     }
   }
+  function choix(signe, nbCarte){
+      joueur = signe;
+      console.log(joueur);
+      console.log(carte[nbCarte]);
+      carte[nbCarte].style.display = "inline-block";
+      choixOrdi();
+      confrontation();
+    }
 
 function finJeu(){
   if(pointJoueur == 3){
